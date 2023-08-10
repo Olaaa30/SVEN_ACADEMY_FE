@@ -42,7 +42,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav >
+      <nav>
         {/* <a href=""><img className="logo" src={logo} alt="logo" /></a> */}
         <Link to="/">
           <a href="">
@@ -64,7 +64,7 @@ const Navbar = () => {
             </li>
             </ul>
           </div>
-          <ul className={click ? "nav-menu-active" : "nav-menu"}>
+          <ul className={"nav-menu"}>
             <li className="nav-item">
               <Link to="/" onClick={closeMobileMenu} className="nav-links">
                 Courses{" "}

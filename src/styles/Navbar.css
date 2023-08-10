@@ -11,12 +11,9 @@ nav {
     height: 60px;
   }
   
-  .navbar{
+  .nav-menu{
     display: flex;
-  align-items: center;
-  justify-content: center;
-  }
-  .navbar li{
+    flex-direction: row;
     list-style: none;
     padding: 0px 10px;
     position: relative;
@@ -43,7 +40,39 @@ nav {
   bottom: -4px;
   left: 20px;
 }
-.nav-menu {
-    display: flex;
+.menu-icon{
+  display: none;
+}
 
+@media screen and (max-width:769px){
+  .nav-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 104px;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #2a3539;
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+    padding: 40px 0 0 10px;
+  
+  }
+  nav-menu-active{
+    right: 0px;
+  }
+  .menu-icon{
+    display: block;
+  }
+
+  .menu-icon li {
+    list-style: none;
+
+  }
+  .nav-menu li{
+    margin-bottom: 25px;
+    font-size: 25px;
+  }
 }
