@@ -46,47 +46,65 @@ const Navbar = () => {
         {/* <a href=""><img className="logo" src={logo} alt="logo" /></a> */}
         <Link to="/">
           <a href="">
-            <img className="navbar-logo" onClick={closeMobileMenu} src={logo} alt="logo" />
+            <img
+              className="navbar-logo"
+              onClick={closeMobileMenu}
+              src={logo}
+              alt="logo"
+            />
           </a>
         </Link>
         <div className="navbar">
           <div className="menu-icon" onClick={handleClick}>
             <ul>
               <li>
-              {click ? (
-                <FontAwesomeIcon
-                  icon={timesIcon}
-                  style={{ color: "#ffffff" }}
-                />
-              ) : (
-                <FontAwesomeIcon
-                icon={bars}
-                style={{ color: "#ffffff" }} />
-              )}
-            </li>
+                {click ? (
+                  <FontAwesomeIcon
+                    icon={timesIcon}
+                    style={{ color: "#ffffff" }}
+                  />
+                ) : (
+                  <FontAwesomeIcon icon={bars} style={{ color: "#ffffff" }} />
+                )}
+              </li>
             </ul>
           </div>
-          <ul id={click ? "nav-menu" : "nav-menu active"} className={"nav-menu"}>
-            <li className="nav-item">
-              <Link to="/" onClick={closeMobileMenu} className="nav-links">
-                Courses{" "}
-                <FontAwesomeIcon icon={caret} style={{ color: "#ffffff" }} />
-              </Link>
-              {dropDown && <DropdownForCourses />}
-            </li>
-            <li className="nav-item">
-              <Link to="/resources" onClick={closeMobileMenu} className="nav-links">
-                Resources{" "}
-                <FontAwesomeIcon icon={caret} style={{ color: "#ffffff" }} />
-                {dropDown && <DropdownForResources />}
-              </Link>
-            </li>
+          <ul
+            id={click ? "nav-menu" : "nav-menu active"}
+            className={"nav-menu"}
+          >
             <li
-              className="nav-item"
               onMouseEnter={onMouseEnter}
               onMouseLeave={onMouseLeave}
+              className="nav-item"
             >
-              <Link to="/contact-us"onClick={closeMobileMenu} className="nav-links">
+              <Link to="/" className="nav-links">
+                Courses{" "}
+                <FontAwesomeIcon onClick={() => setDropDown(dropDown)} icon={caret} style={{ color: "#ffffff" }} />
+              </Link>
+              {<DropdownForCourses />}
+            </li>
+            <li
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+              className="nav-item"
+            >
+              <Link
+                to="/resources"
+                onClick={closeMobileMenu}
+                className="nav-links"
+              >
+                Resources{" "}
+                <FontAwesomeIcon icon={caret} style={{ color: "#ffffff" }} />
+              </Link>
+              {<DropdownForResources />}
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/contact-us"
+                onClick={closeMobileMenu}
+                className="nav-links"
+              >
                 Contact Us
               </Link>
             </li>
@@ -96,12 +114,15 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <Link to="/sign-up" onClick={closeMobileMenu}className="nav-links-mobile">
-              <Button />
+              <Link
+                to="/sign-up"
+                onClick={closeMobileMenu}
+                className="nav-links-mobile"
+              >
+                <Button />
               </Link>
             </li>
           </ul>
-          
         </div>
       </nav>
     </div>

@@ -3,7 +3,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     background: #1b2430;
-    padding: 20px 80px;
+    padding: 20px 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
   }
   .navbar-logo {
@@ -24,6 +24,7 @@ nav {
     font-weight: 600;
     color: #fff;
     transition: 0.3s ease-in-out;
+    padding: 0px 10px;
   }
   .navbar li a:hover,
 .navbar li a.active {
@@ -61,11 +62,10 @@ nav {
     background-color: #2a3539;
     box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
     padding: 40px 0 0 10px;
+    transition: 0.3s ease-in-out;
   
   }
-  #nav-menu.active {
-    display: none;
-  }
+
   .nav-menu li {
     cursor: pointer;
   }

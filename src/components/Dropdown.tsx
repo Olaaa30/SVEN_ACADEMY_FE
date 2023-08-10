@@ -32,7 +32,13 @@ export const DropdownForResources = () => {
       <ul
         className={click ? "dropdown-menu-clicked" : "dropdown-menu"}
         onClick={handleClick}
-      ></ul>
+      >
+        {MenuItemsForResources.map((item, index) =>{
+        return (
+            <li key={index}><Link to={item.path} onClick={() => {setClick(click)}} className={item.cName}>{item.title}</Link></li>
+        )
+      })}
+      </ul>
     </>
   );
 };
