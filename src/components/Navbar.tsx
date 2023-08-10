@@ -59,12 +59,14 @@ const Navbar = () => {
                   style={{ color: "#ffffff" }}
                 />
               ) : (
-                <FontAwesomeIcon icon={bars} style={{ color: "#ffffff" }} />
+                <FontAwesomeIcon
+                icon={bars}
+                style={{ color: "#ffffff" }} />
               )}
             </li>
             </ul>
           </div>
-          <ul className={"nav-menu"}>
+          <ul id={click ? "nav-menu" : "nav-menu active"} className={"nav-menu"}>
             <li className="nav-item">
               <Link to="/" onClick={closeMobileMenu} className="nav-links">
                 Courses{" "}
