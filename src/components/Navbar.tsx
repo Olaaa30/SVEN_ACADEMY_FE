@@ -15,7 +15,8 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
-  const [dropDown, setDropDown] = useState(false);
+  const [dropDownForCourses, setDropDownForCourses] = useState(false);
+  const [dropDownForResources, setDropDownForResources] = useState(false);
   const cartIcon: IconProp = faShoppingCart;
   const timesIcon: IconProp = faTimes;
   const bars: IconProp = faBars;
@@ -25,18 +26,33 @@ const Navbar = () => {
     setClick(!click);
   };
   const closeMobileMenu = () => setClick(false);
-  const onMouseEnter = () => {
-    if (window.innerWidth < 960) {
-      setDropDown(false);
+  const onMouseEnterForCourses = () => {
+    if (window.innerWidth < 4000) {
+      setDropDownForCourses(true);
     } else {
-      setDropDown(true);
+      setDropDownForCourses(false);
     }
   };
-  const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
-      setDropDown(false);
+  const onMouseLeaveForCourses = () => {
+    if (window.innerWidth < 4000) {
+      setDropDownForCourses(false);
     } else {
-      setDropDown(false);
+      setDropDownForCourses(false);
+    }
+  };
+
+  const onMouseEnterForResources= () => {
+    if (window.innerWidth < 4000) {
+      setDropDownForResources(true);
+    } else {
+      setDropDownForResources(false);
+    }
+  };
+  const onMouseLeaveForResources = () => {
+    if (window.innerWidth < 4000) {
+      setDropDownForResources(false);
+    } else {
+      setDropDownForResources(false);
     }
   };
 
@@ -74,19 +90,19 @@ const Navbar = () => {
             className={"nav-menu"}
           >
             <li
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
+              onMouseEnter={onMouseEnterForCourses}
+              onMouseLeave={onMouseLeaveForCourses}
               className="nav-item"
             >
               <Link to="/" className="nav-links">
                 Courses{" "}
-                <FontAwesomeIcon onClick={() => setDropDown(dropDown)} icon={caret} style={{ color: "#ffffff" }} />
+                <FontAwesomeIcon icon={caret} style={{ color: "#ffffff" }} />
               </Link>
-              {<DropdownForCourses />}
+              {dropDownForCourses && <DropdownForCourses />}
             </li>
             <li
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
+              onMouseEnter={onMouseEnterForResources}
+              onMouseLeave={onMouseLeaveForResources}
               className="nav-item"
             >
               <Link
@@ -97,7 +113,7 @@ const Navbar = () => {
                 Resources{" "}
                 <FontAwesomeIcon icon={caret} style={{ color: "#ffffff" }} />
               </Link>
-              {<DropdownForResources />}
+              {dropDownForResources && <DropdownForResources />}
             </li>
             <li className="nav-item">
               <Link
