@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { MenuItemsForCourses, MenuItemsForResources } from "./Menuitems";
-import '../styles/Dropdown.css'
+import "../styles/Dropdown.css";
 export const DropdownForCourses = () => {
   const [click, setClick] = useState(false);
 
@@ -22,7 +22,7 @@ export const DropdownForCourses = () => {
                 onClick={() => {
                   setClick(click);
                 }}
-                className={'dropdown-link'}
+                className="dropdown-link"
               >
                 {item.title}
               </Link>
@@ -54,7 +54,7 @@ export const DropdownForResources = () => {
                 onClick={() => {
                   setClick(click);
                 }}
-                className={'dropdown-link'}
+                className="dropdown-link"
               >
                 {item.title}
               </Link>

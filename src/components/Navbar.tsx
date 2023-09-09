@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../styles/Navbar.css";
 import logo from "../assets/Sven_Academy.png";
 import Button from "./Button";
@@ -133,7 +133,7 @@ const Navbar = () => {
               <Link
                 to="/sign-up"
                 onClick={closeMobileMenu}
-                className="nav-links-mobile"
+                className="nav-links"
               >
                 <Button />
               </Link>
