@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MenuItemsForCourses, MenuItemsForResources } from "./Menuitems";
 import "../styles/Dropdown.css";
