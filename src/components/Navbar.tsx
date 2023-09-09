@@ -41,7 +41,7 @@ const Navbar = () => {
     }
   };
 
-  const onMouseEnterForResources= () => {
+  const onMouseEnterForResources = () => {
     if (window.innerWidth < 4000) {
       setDropDownForResources(true);
     } else {
